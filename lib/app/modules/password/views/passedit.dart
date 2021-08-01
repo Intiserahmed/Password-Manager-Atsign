@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:sacred2/app/modules/password/controllers/password_controller.dart';
-import 'package:sacred2/app/utils/sacred_text.dart';
-import 'package:uuid/uuid.dart';
 import 'package:get/get.dart';
 
 class EditPassWord extends GetView<PasswordController> {
@@ -11,7 +9,12 @@ class EditPassWord extends GetView<PasswordController> {
   @override
   Widget build(BuildContext context) {
     Get.put(PasswordController());
-
+    var _data = Get.arguments;
+    controller.loginEditingController!.text = _data[0];
+    controller.passEditingController!.text = _data[1];
+    controller.siteEditingController!.text = _data[2];
+    controller.domainEditingController!.text = _data[3];
+    String sacredkey = _data[4];
     return Scaffold(
         appBar: AppBar(),
         body: Container(
@@ -75,18 +78,23 @@ class EditPassWord extends GetView<PasswordController> {
                         height: 8,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           ElevatedButton(
-                              child: Text('Save'),
+                              child: Text('Update'),
                               onPressed: () {
-                                passSave(
-                                  controller.loginEditingController!.text,
-                                  controller.passEditingController!.text,
-                                  controller.siteEditingController!.text,
-                                  controller.domainEditingController!.text,
-                                );
+                                passUpdate(
+                                    controller.loginEditingController!.text,
+                                    controller.passEditingController!.text,
+                                    controller.siteEditingController!.text,
+                                    controller.domainEditingController!.text,
+                                    sacredkey);
                                 ;
+                              }),
+                          ElevatedButton(
+                              child: Text('Delete'),
+                              onPressed: () {
+                                passDelete(sacredkey);
                               }),
                         ],
                       )
@@ -97,10 +105,9 @@ class EditPassWord extends GetView<PasswordController> {
         ));
   }
 
-  void passSave(String login, String pass, String site, String domain) {
-    var uuid = Uuid();
-
-    String unikey = SacredText.PASSWORD + uuid.v1().replaceAll('-', '_');
+  void passUpdate(
+      String login, String pass, String site, String domain, String key) {
+    String unikey = key;
 
     controller.savePass({
       'login': login,
@@ -109,6 +116,11 @@ class EditPassWord extends GetView<PasswordController> {
       'domain': domain,
       'sacredkey': unikey
     }, 1);
+    Get.back();
+  }
+
+  void passDelete(var key) {
+    controller.deletePass(key, 1);
     Get.back();
   }
 }

@@ -64,6 +64,38 @@ class PasswordController extends GetxController {
     return '';
   }
 
+  Future<void> deletePass(String sacredkey, int screen) async {
+    String? atSign = clientSdkService.atsign;
+
+    AtKey atKey = AtKey();
+    atKey.key = sacredkey;
+    atKey.sharedWith = atSign;
+
+    print(sacredkey);
+    print(atKey.key);
+    print(atKey);
+    var result = await clientSdkService.delete(atKey);
+    if (result == true) {
+      if (screen == 1) {
+        clearTextEditingControllers();
+        passlist.clear();
+        readPasskey(1);
+      }
+      if (screen == 2) {
+        clearTextEditingControllers();
+        infoList.clear();
+        readPasskey(2);
+      }
+      if (screen == 3) {
+        clearTextEditingControllers();
+        idList.clear();
+        readPasskey(3);
+      }
+    } else {
+      print("not executed");
+    }
+  }
+
   Future<void> savePass(Map data, int screen) async {
     String? atSign = clientSdkService.atsign;
     AtKey atKey = AtKey();
@@ -164,8 +196,6 @@ class PasswordController extends GetxController {
   void updatePass(Map data) {}
 
 // delete Operation
-
-  void deletePass(Map data) {}
 
   @override
   void onReady() {
