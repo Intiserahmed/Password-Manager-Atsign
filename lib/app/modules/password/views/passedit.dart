@@ -5,8 +5,8 @@ import 'package:sacred2/app/utils/sacred_text.dart';
 import 'package:uuid/uuid.dart';
 import 'package:get/get.dart';
 
-class AddPassWord extends GetView<PasswordController> {
-  const AddPassWord({Key? key}) : super(key: key);
+class EditPassWord extends GetView<PasswordController> {
+  const EditPassWord({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class AddPassWord extends GetView<PasswordController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Add Password',
+                        'Edit Password',
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),

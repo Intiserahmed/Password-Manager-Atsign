@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sacred2/app/modules/Id/views/id_view.dart';
 import 'package:sacred2/app/modules/password/views/password_view.dart';
-import 'package:sacred2/app/modules/payment/views/personal_info_view.dart';
+import 'package:sacred2/app/modules/personalinfo/views/personal_info_view.dart';
 
 import '../controllers/home_controller.dart';
 

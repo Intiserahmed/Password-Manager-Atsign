@@ -1,15 +1,20 @@
+
+import 'dart:convert';
+
+List<PasswordSacred> postmodelFromJson(String str) => List<PasswordSacred>.from(json.decode(str).map((x) => PasswordSacred.fromJson(x)));
+
+String postmodelToJson(List<PasswordSacred> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
 class PasswordSacred {
   String? login;
   String? pass;
-  String? domain;
   String? sacredkey;
 
-  PasswordSacred({this.login, this.pass, this.domain,this.sacredkey});
+  PasswordSacred({this.login, this.pass, this.sacredkey});
 
   PasswordSacred.fromJson(Map<String, dynamic> json) {
     login = json['login'];
     pass = json['pass'];
-    domain = json['domain'];
     sacredkey = json['sacredkey'];
   }
 
@@ -17,7 +22,6 @@ class PasswordSacred {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data['login'] = this.login;
     data['pass'] = this.pass;
-    data['domain'] = this.domain;
     data['sacredkey'] =this.sacredkey;
     return data;
   }

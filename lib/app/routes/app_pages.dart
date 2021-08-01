@@ -5,7 +5,7 @@ import 'package:sacred2/app/modules/home/views/home_view.dart';
 import 'package:sacred2/app/modules/onboarding/onboarding.dart';
 import 'package:sacred2/app/modules/password/views/passadd_view.dart';
 import 'package:sacred2/app/modules/password/views/password_view.dart';
-import 'package:sacred2/app/modules/payment/views/personal_info_view.dart';
+import 'package:sacred2/app/modules/personalinfo/views/personal_info_view.dart';
 
 part 'app_routes.dart';
 
@@ -31,10 +31,7 @@ class AppPages {
       name: _Paths.ID,
       page: () => IdView(),
     ),
-        GetPage(
-      name: '/passadd',
-      page: () => PassaddView(),
-    ),
+
         GetPage(
       name: '/onboarding',
       page: () => Onbording(),
