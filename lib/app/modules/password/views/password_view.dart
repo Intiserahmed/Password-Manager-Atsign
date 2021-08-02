@@ -37,7 +37,7 @@ class PasswordView extends GetView<PasswordController> {
                             _item['pass'],
                             _item['website'],
                             _item['domain'],
-                           key
+                            key
                           ],
                         );
                       },
@@ -47,7 +47,9 @@ class PasswordView extends GetView<PasswordController> {
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
-          onPressed: () => Get.to(AddPassWord()),
+          onPressed: () {
+            Get.to(AddPassWord());
+          },
           label: Text('Add Password'),
           icon: Icon(Icons.add),
         ));

@@ -11,7 +11,7 @@ class AddPassWord extends GetView<PasswordController> {
   @override
   Widget build(BuildContext context) {
     Get.put(PasswordController());
-
+    controller.clearTextEditingControllers();
     return Scaffold(
         appBar: AppBar(),
         body: Container(
