@@ -107,10 +107,6 @@ class PasswordController extends GetxController {
 
     var result = await clientSdkService.put(atKey,
         encoded); //  boolean to ensure the value is stored in the  secondary
-    //now empty the list and refresh the list
-    //should declare a list of list to  get the screen number froom user
-    // need  to find out which list to clear
-    // maybe when a save operation happens
 
     //// The bug it is only clearing the needed one
     if (result == true) {
