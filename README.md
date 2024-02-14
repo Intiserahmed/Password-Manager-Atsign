@@ -1,16 +1,25 @@
-# sacred2
+# Password Manager - Atsign SDK Example App
 
-A new Flutter project.
+This is an example app made with the Atsign SDK, allowing you to securely save your passwords and information encrypted.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with the Atsign SDK Example App, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository: `git clone https://github.com/your-username/atsign-sdk-example.git`
+2. Navigate to the project directory: `cd atsign-sdk-example`
+3. Install dependencies: `flutter pub get`
+4. Open the project in your preferred IDE or text editor.
+5. Run the app on an emulator or physical device.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Learn More
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To learn more about the Atsign SDK, please head to the [official documentation](https://docs.atsign.com/). The documentation provides detailed information on how to integrate and use the Atsign SDK in your projects.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the Atsign SDK Example App, please follow the guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
