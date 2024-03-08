@@ -6,7 +6,7 @@ This is an example app made with the Atsign SDK, allowing you to securely save y
 
 [![Video Preview](http://img.youtube.com/vi/Yp2YaX94FMQ/0.jpg)](https://youtu.be/Yp2YaX94FMQ)
 
-[Watch the video on YouTube](https://youtu.be/Yp2YaX94FMQ?t=2297)
+[Watch the App Demo video on YouTube](https://youtu.be/Yp2YaX94FMQ?t=2297)
 
 ## Getting Started
 
